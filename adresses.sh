@@ -15,6 +15,5 @@ grep '^S' "$fichier"
 echo
 
 echo "Liste des personnes avec leurs numéros de téléphone :"
-grep -E '^[A-Za-z]' "$fichier" > pers_num.txt
-grep -E '^[0-9]{3}-' "$fichier" >> pers_num.txt
+grep -A1 '^[A-Za-z]' "$fichier" | grep -v '^--' > pers_num.txt
 cat pers_num.txt
